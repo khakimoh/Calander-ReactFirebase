@@ -1,0 +1,279 @@
+@charset "utf-8";
+.grid{
+    display: grid;
+    gap:0px 0px;
+}
+.grid_3_9{grid-template-columns: 3fr 9fr;}
+.grid_7{grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;}
+.grid_3{grid-template-columns: 1fr 1fr 1fr;}
+.row{
+    margin: 0;
+}
+.calander{
+    background-color: #ddd;
+}
+.task{
+    background-color: yellow;
+}
+/*//////////////////*/
+
+.Task span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Task span::before {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+span.addTask::before{
+    content: '\002B';
+}
+span.completeButton::before{
+    content: '\02C5';
+}
+
+.Task:hover span {
+  padding-left: 25px;
+}
+
+.Task:hover span::before {
+  opacity: 1;
+  left: 0;
+}
+
+button.Task {
+  background-color: darkgray;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 50%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5px;
+  transition: all 0.5s;    
+}
+button.Task:hover{
+    background-color: gray;
+}
+ul.task li{
+    list-style-type: circle;
+    font-size: 1.3em;
+    padding: 15px;
+}
+ul.task li div:nth-child(2){
+    color: gray;
+    font-size: 0.7em;
+}
+.task_box{
+    margin: 30px;
+    border: thin dotted gray;
+    box-shadow: 1px 5px 30px darkgray;
+    border-radius: 30px;
+}
+/*//////////////////*/
+.list-group{
+    width: 100%;
+}
+.list-group-item{
+    background-color: transparent;
+}
+/*//////////////////*/
+.avatar{
+    border-radius: 50%;
+    max-width: 60px;
+    float: right;
+}
+.avatar_text1{
+    position: absolute;
+    font-size: 1.2em;
+    top: 0px;
+    color: gray;
+}
+.avatar_text2 {
+    position: absolute;
+    font-size: 1.2em;
+    bottom: 0px;    
+}
+.under_border{
+    border-bottom: thin solid gray;
+    padding: 15px 0 5px 0;
+}
+/*//////////////////*/
+.p_relative{
+    position: relative;
+}
+.p_absolute{
+    position: absolute;
+}
+.centerInCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.centerHorizontal{
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);   
+}
+.centerAlign{
+    text-align: center;
+}
+.f_right{
+    float: right;
+}
+.f_left{
+    float: left;
+}
+/*//////////////////*/
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+.searchCenter {
+    position: relative;
+    left: 50%;
+    transform: translate(-10%);/*width is 60%*/
+}
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: gray;
+}
+.form-control{
+    max-width: 60%;
+    background-color: transparent;
+    box-shadow: 1px 5px 5px lightgray;
+    border-radius: 30px;
+}
+.form-control:focus{
+    border-color: lightgray;
+    background-color: transparent;
+    box-shadow: 0 0 0 .2rem rgba(128,128,128,0.25);
+   
+}
+/*//////////////////*/
+.month_navigate {
+  padding: 5px;
+  border-radius: 45px;
+  max-width: 30%;
+  background: transparent;
+  text-align: center;
+  left: 50%; 
+  transform: translate(-50%);   
+}
+.month_navigate ul {
+  margin: 0;
+  padding: 0;
+}
+.month_navigate ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  list-style-type: none;
+  display: inline-block;
+  border-radius: 30px;
+  color: #666;
+  text-align: center;
+}
+.month_navigate ul div li {
+    font-size: 0.7em;
+    position: relative;
+    top: 50%;
+}
+.month_navigate ul div li.active {
+    background-color: darkorange;
+    text-shadow: 2px 2px 5px lightgray;
+}
+.month_navigate .prev {
+  float: left;
+  margin: 0px 15px;
+}
+.month_navigate .next {
+  float: right;
+  margin: 0px 15px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+  position: relative;
+  border-radius: 0px 0px 15px 15px;
+  box-shadow: 1px 10px 15px 0 gray, 0 6px 20px 0 lightgray;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+.days {
+  background: #eee;
+    padding: 0px;
+  margin: 0;
+}
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size:12px;
+  padding: 15px;
+  border: thin solid lightgray;
+}
+.days li div.task{
+    background-color: white;
+    box-shadow: 0px 3px 5px gray;
+    color: black;
+    border-radius: 15px;
+    margin: 5px;
+}
+.days li div.calander_number{
+    margin-bottom: 15px;
+}
+
+.days li div .active {
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;    
+  display: inline-block;
+  background: #1abc9c;
+}
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
+
